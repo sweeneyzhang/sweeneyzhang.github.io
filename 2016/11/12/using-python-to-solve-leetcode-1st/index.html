@@ -1,0 +1,699 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,Leetcode,算法," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JonZhang's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="Fizz Buzz题目简述Write a program that outputs the string representation of numbers from 1 to n.But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode刷题笔记(1)">
+<meta property="og:url" content="http://jonzhang.me/2016/11/12/using-python-to-solve-leetcode-1st/index.html">
+<meta property="og:site_name" content="JonZhang's blog">
+<meta property="og:description" content="Fizz Buzz题目简述Write a program that outputs the string representation of numbers from 1 to n.But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output">
+<meta property="og:updated_time" content="2016-11-12T16:34:24.546Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode刷题笔记(1)">
+<meta name="twitter:description" content="Fizz Buzz题目简述Write a program that outputs the string representation of numbers from 1 to n.But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://jonzhang.me/2016/11/12/using-python-to-solve-leetcode-1st/"/>
+
+
+  <title> Leetcode刷题笔记(1) | JonZhang's blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JonZhang's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">To be a better man.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Leetcode刷题笔记(1)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-12T12:38:31+08:00" content="2016-11-12">
+              2016-11-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/12/using-python-to-solve-leetcode-1st/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/12/using-python-to-solve-leetcode-1st/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Fizz-Buzz"><a href="#Fizz-Buzz" class="headerlink" title="Fizz Buzz"></a><a href="https://leetcode.com/problems/fizz-buzz/" target="_blank" rel="external">Fizz Buzz</a></h1><h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><p>Write a program that outputs the string representation of numbers from 1 to n.<br>But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.<br><a id="more"></a></p>
+<h2 id="Python-程序"><a href="#Python-程序" class="headerlink" title="Python 程序"></a>Python 程序</h2><p>作为Leetcode之旅的第一道题目，是一个非常简单的程序。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">fizzBuzz</span><span class="params">(self, n)</span>:</span></div><div class="line">    	<span class="string">"""</span></div><div class="line">    	:type n: int</div><div class="line">    	:rtype: List[str]</div><div class="line">    	"""</div><div class="line">    	ans = []</div><div class="line">    	<span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>):</div><div class="line">        	n = str(x)</div><div class="line">        	<span class="keyword">if</span> x % <span class="number">15</span> == <span class="number">0</span>:</div><div class="line">            	n = <span class="string">"FizzBuzz"</span></div><div class="line">        	<span class="keyword">elif</span> x % <span class="number">3</span> == <span class="number">0</span>:</div><div class="line">            	n = <span class="string">"Fizz"</span></div><div class="line">        	<span class="keyword">elif</span> x % <span class="number">5</span> == <span class="number">0</span>:</div><div class="line">            	n = <span class="string">"Buzz"</span></div><div class="line">        	ans.append(n)</div><div class="line">    	<span class="keyword">return</span> ans</div></pre></td></tr></table></figure></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这一道题目虽然很简单，但是对于我而言，也不是快速就解决了的。主要的阻碍是，之前一直学习C语言，近期初学Python，对于Python语言的基本数据类型不熟悉。另一方面，也是把Leetcode过于高看，想得太复杂。通过第一道题目，对于Python的强大又有所体会，对于这一类算法的题目，使用Python来编程，编程语言和人的分析过程很接近，不需要耗费大量时间在自然语言和计算机程序的转换过程中。</p>
+<h1 id="Reverse-String"><a href="#Reverse-String" class="headerlink" title="Reverse String"></a><a href="https://leetcode.com/problems/reverse-string/" target="_blank" rel="external">Reverse String</a></h1><h2 id="题目简述-1"><a href="#题目简述-1" class="headerlink" title="题目简述"></a>题目简述</h2><p>Write a function that takes a string as input and returns the string reversed.<br><strong>Example</strong>: Given s = “hello”, return “olleh”.</p>
+<h2 id="Python-程序-1"><a href="#Python-程序-1" class="headerlink" title="Python 程序"></a>Python 程序</h2><p>Python中的字符串类型是没有reverse方法的，但是列表类型（list）有这个方法。所以首先使用list()函数来转换类型，将str转换成list，再通过方法reverse()实现list的反转，最后使用join方法来将字符串列表重新拼接成一个字符串。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseString</span><span class="params">(self,s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: str</div><div class="line">        """</div><div class="line">        ans = list(s)</div><div class="line">        ans.reverse()</div><div class="line">        <span class="keyword">return</span> <span class="string">""</span>.join(ans)</div></pre></td></tr></table></figure></p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>通过这道题目，主要学习了Python的list类型和str类型，以及相关的一些方法的使用。list()函数可以很方便的将传入的参数分解成一个列表；reverse()方法，可以将列表的元素倒转；字符串的join()方法可以拼接字符串。其他在这一程序中没有用到的方法，如list的append、remove、insert等也有所了解。</p>
+<h1 id="Nim-Game"><a href="#Nim-Game" class="headerlink" title="Nim Game"></a><a href="https://leetcode.com/problems/nim-game/" target="_blank" rel="external">Nim Game</a></h1><h2 id="题目简述-2"><a href="#题目简述-2" class="headerlink" title="题目简述"></a>题目简述</h2><p>You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.<br>Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.<br>For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.</p>
+<h2 id="Python-程序-2"><a href="#Python-程序-2" class="headerlink" title="Python 程序"></a>Python 程序</h2><p>假设你和你的朋友两个人正在分一堆钻石，你们商量好两个人轮流取，每次取得钻石数量为1~3颗，谁拿到了最后一颗，谁就赢了。虽然不知道为何不是以谁拿的数量多为标准，但是假设就是这么无聊吧。<br>假设现在是到你取钻石的时候，如果钻石数量在1~3，那么你赢了。如果数量为4，那么不管你取多少，都不可能会赢。如果数量在5，你取走一颗，留下4颗，那么不管对手取多少，你都会获胜。如果取走2或者3颗，对手将会获胜。所以，最后一轮取之前，谁能够给对手留下4枚，谁就能获胜。继续分析，如果为6或7颗，留下4颗，那么你最终将获胜。如果数量为8颗，在双方都足够聪明的情况下，对方会获胜……分析可以发现，当总数量为4的倍数时，对方将会获胜，而不为4的倍数时，第一个拿钻石的人将会获胜。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canWinNim</span><span class="params">(self,n)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type n: int</div><div class="line">        :rtype: bool</div><div class="line">        """</div><div class="line">        <span class="keyword">if</span> n % <span class="number">4</span> == <span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure></p>
+<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><p>虽然这一个题目乍看之下，觉得很复杂，需要分析双方的策略，但是通过分析归纳得到规律，就可以转换成简单的解法。本解法的正确性关键在于一个前提：参与双方都足够聪明。通过这个题目，我体会到表面上看起来复杂的东西，往往其本质很简单，而有些看起来简单的往往又比较复杂。  </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/06/challenge_leetcode_unsing_python/" rel="next" title="新的征途——用Python刷Leetcode">
+                <i class="fa fa-chevron-left"></i> 新的征途——用Python刷Leetcode
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/12/roshomon/" rel="prev" title="《罗生门》">
+                《罗生门》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/12/using-python-to-solve-leetcode-1st/"
+           data-title="Leetcode刷题笔记(1)" data-url="http://jonzhang.me/2016/11/12/using-python-to-solve-leetcode-1st/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Jon Zhang" />
+          <p class="site-author-name" itemprop="name">Jon Zhang</p>
+          <p class="site-description motion-element" itemprop="description">反正你也不认识我。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sweeneyzhang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/JiongDouble" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhang-jun-sheng-61s" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/146237641/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fizz-Buzz"><span class="nav-number">1.</span> <span class="nav-text">Fizz Buzz</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目简述"><span class="nav-number">1.1.</span> <span class="nav-text">题目简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-程序"><span class="nav-number">1.2.</span> <span class="nav-text">Python 程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reverse-String"><span class="nav-number">2.</span> <span class="nav-text">Reverse String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目简述-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-程序-1"><span class="nav-number">2.2.</span> <span class="nav-text">Python 程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-1"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nim-Game"><span class="nav-number">3.</span> <span class="nav-text">Nim Game</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目简述-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-程序-2"><span class="nav-number">3.2.</span> <span class="nav-text">Python 程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-2"><span class="nav-number">3.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jon Zhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jonzhang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

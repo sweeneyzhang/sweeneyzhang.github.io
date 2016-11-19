@@ -1,0 +1,703 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="规划,Python,Leetcode," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JonZhang's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="前言距离2017年只有50多天了，时光飞逝，十年前不再是1996，而是2006。以前一直觉得自己还很年轻，现在想想，也是到了要好好照顾身体，好好陪伴家人的年纪。入职技威时代也有四个月了，三个月试用期转正后，就开始担任Linux软件组的代理组长，作为一个刚毕业的菜鸟，一个组里最晚入职的新人而言，挑战还是很大的。一开始，很担心和同事沟通不力，导致工作安排不能正常进行，好在同事们对于我的工作还是非常支持">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新的征途——用Python刷Leetcode">
+<meta property="og:url" content="http://jonzhang.me/2016/11/06/challenge_leetcode_unsing_python/index.html">
+<meta property="og:site_name" content="JonZhang's blog">
+<meta property="og:description" content="前言距离2017年只有50多天了，时光飞逝，十年前不再是1996，而是2006。以前一直觉得自己还很年轻，现在想想，也是到了要好好照顾身体，好好陪伴家人的年纪。入职技威时代也有四个月了，三个月试用期转正后，就开始担任Linux软件组的代理组长，作为一个刚毕业的菜鸟，一个组里最晚入职的新人而言，挑战还是很大的。一开始，很担心和同事沟通不力，导致工作安排不能正常进行，好在同事们对于我的工作还是非常支持">
+<meta property="og:updated_time" content="2016-11-12T16:32:33.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="新的征途——用Python刷Leetcode">
+<meta name="twitter:description" content="前言距离2017年只有50多天了，时光飞逝，十年前不再是1996，而是2006。以前一直觉得自己还很年轻，现在想想，也是到了要好好照顾身体，好好陪伴家人的年纪。入职技威时代也有四个月了，三个月试用期转正后，就开始担任Linux软件组的代理组长，作为一个刚毕业的菜鸟，一个组里最晚入职的新人而言，挑战还是很大的。一开始，很担心和同事沟通不力，导致工作安排不能正常进行，好在同事们对于我的工作还是非常支持">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://jonzhang.me/2016/11/06/challenge_leetcode_unsing_python/"/>
+
+
+  <title> 新的征途——用Python刷Leetcode | JonZhang's blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JonZhang's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">To be a better man.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                新的征途——用Python刷Leetcode
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-06T21:24:28+08:00" content="2016-11-06">
+              2016-11-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/06/challenge_leetcode_unsing_python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/challenge_leetcode_unsing_python/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>距离2017年只有50多天了，时光飞逝，十年前不再是1996，而是2006。以前一直觉得自己还很年轻，现在想想，也是到了要好好照顾身体，好好陪伴家人的年纪。<br>入职技威时代也有四个月了，三个月试用期转正后，就开始担任Linux软件组的代理组长，作为一个刚毕业的菜鸟，一个组里最晚入职的新人而言，挑战还是很大的。一开始，很担心和同事沟通不力，导致工作安排不能正常进行，好在同事们对于我的工作还是非常支持的，第一个月就在跌跌撞撞中前行，只能说是平庸，无功无过。<br>看了公司历史遗留的代码之后，一开始是非常不解，因为代码有点混乱；之后慢慢熟悉了工作内容和工作流程，熟悉了产品的功能之后，又开始佩服前辈们，程序中也有许多巧妙地想法。另一方面，实现一个复杂的系统需要良好的程序架构，显然一开始是有这个想法存在的，可惜经手的人多了，想法不能很好的传承，导致越来越混乱。为了尽可能地优化公司的现有程序，我需要在技术上有更多的了解，除了C语言，还要在算法、数据结构乃至设计模式上，有所涉猎。也许这是一个很长的旅程，也是一段艰难的征途，我准备上路了，生活总是充满挑战，人生才会充满乐趣。<br><a id="more"></a></p>
+<h2 id="征途"><a href="#征途" class="headerlink" title="征途"></a>征途</h2><p>我的目标是学习Python和刷Leetcode的题目。<br>以前对于Python的学习，每次都是浅尝辄止，都没有使用Python实战过任何项目。对于算法，单纯的理论学习不实践，就“纸上得来终觉浅”，如果一直使用C语言来实现算法，未免太过于耗费时间。而Python的程序逻辑和实际语言更为接近，可以更好地体现算法的思路。追求算法效率时，可以使用c语言来实现；而为了高效地学习算法和程序思维，个人以为python更为合适。<br>因此，在后面的这段时间中，我希望自己能够在学习python的同时，使用python程序来解决Leetcode上的算法题目。也许对于很多人来说，Leetcode就像是以前的古诗文一样，是为了倒背如流以便于应付科技公司的面试。在我看来，Leetcode上的题目虽然是固定的，但是每一个题目，都会有一些技术大牛提供一些新颖的解法，对于新手而言，去欣赏优秀的代码能够更快更好的学习，何乐而不为呢？<br>选择Leetcode的另一个原因就在于，题目内容短小，可以在上班前看一道题目，上下班路上或者工作午休时稍微思考，也许刚开始时，想一天也不能得到一个解法，或者说不能通过，但是不停的学习，总会有进步的。现在和学校的课程不一样就在于，没有期末考试，不用为了考试而去应付，可以真实地面对自己的内心。现在开始努力，最坏的结果不过是，大器晚成。</p>
+<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><p>在2017年到来之前，熟练掌握Python编程语言，能够独立编写一些小型项目，如Python网络爬虫等。<br>完成Leetcode30道题目，这个数量低于一天一道，但是高于一天两天一道，最理想目标是能够一天完成一道题目，以我目前的能力，是无法完成的。不能好高骛远，又要有点挑战性，故给自己设定的是总数30道题目。<br>完成题目之后，将python语言的解法上传Github，同时尽可能的写博客记录这道题目的难点，并对一些有特点的解决方案进行分析。<br>这些计划，对于时间的要求很高，求其上者得其中，求其中者得其下，加油吧，少年！在这个最适合努力的年纪，不要选择偷懒。</p>
+<pre><code>《蜗牛》——周杰伦
+我要一步一步往上爬
+在最高点乘着叶片往前飞
+任风吹干 留过的泪和汗
+我要一步一步往上爬
+等待阳光静静看着它的脸
+小小的天 有大大的梦想
+我有属于我的天
+任风吹干 留过的泪和汗
+总有一天我有属于我的天
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/规划/" rel="tag">#规划</a>
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/05/no_longer_human/" rel="next" title="《人间失格》">
+                <i class="fa fa-chevron-left"></i> 《人间失格》
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/12/using-python-to-solve-leetcode-1st/" rel="prev" title="Leetcode刷题笔记(1)">
+                Leetcode刷题笔记(1) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/06/challenge_leetcode_unsing_python/"
+           data-title="新的征途——用Python刷Leetcode" data-url="http://jonzhang.me/2016/11/06/challenge_leetcode_unsing_python/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Jon Zhang" />
+          <p class="site-author-name" itemprop="name">Jon Zhang</p>
+          <p class="site-description motion-element" itemprop="description">反正你也不认识我。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sweeneyzhang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/JiongDouble" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhang-jun-sheng-61s" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/146237641/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#征途"><span class="nav-number">2.</span> <span class="nav-text">征途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计划"><span class="nav-number">3.</span> <span class="nav-text">计划</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jon Zhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jonzhang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>
