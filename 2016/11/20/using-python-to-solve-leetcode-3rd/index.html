@@ -1,0 +1,790 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,Leetcode,算法,二叉树," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JonZhang's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="Maximum Depth of Binary Tree题目简述Given a binary tree, find its maximum depth.The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="using puthon to solve leetcode 3rd">
+<meta property="og:url" content="http://jonzhang.me/2016/11/20/using-python-to-solve-leetcode-3rd/index.html">
+<meta property="og:site_name" content="JonZhang's blog">
+<meta property="og:description" content="Maximum Depth of Binary Tree题目简述Given a binary tree, find its maximum depth.The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.">
+<meta property="og:updated_time" content="2016-11-20T08:08:58.158Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="using puthon to solve leetcode 3rd">
+<meta name="twitter:description" content="Maximum Depth of Binary Tree题目简述Given a binary tree, find its maximum depth.The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://jonzhang.me/2016/11/20/using-python-to-solve-leetcode-3rd/"/>
+
+
+  <title> using puthon to solve leetcode 3rd | JonZhang's blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JonZhang's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">To be a better man.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                using puthon to solve leetcode 3rd
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-20T09:50:13+08:00" content="2016-11-20">
+              2016-11-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/20/using-python-to-solve-leetcode-3rd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/20/using-python-to-solve-leetcode-3rd/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Maximum-Depth-of-Binary-Tree"><a href="#Maximum-Depth-of-Binary-Tree" class="headerlink" title="Maximum Depth of Binary Tree"></a>Maximum Depth of Binary Tree</h1><h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><p>Given a binary tree, find its maximum depth.<br>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.<br><a id="more"></a></p>
+<h2 id="Python-程序"><a href="#Python-程序" class="headerlink" title="Python 程序"></a>Python 程序</h2><p>计算二叉树的最大深度，需要用递归去求取左右两个子节点的最大深度。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Definition for a binary tree node.</span></div><div class="line"><span class="comment"># class TreeNode(object):</span></div><div class="line"><span class="comment">#     def __init__(self, x):</span></div><div class="line"><span class="comment">#         self.val = x</span></div><div class="line"><span class="comment">#         self.left = None</span></div><div class="line"><span class="comment">#         self.right = None</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxDepth</span><span class="params">(self, root)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type root: TreeNode</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="keyword">if</span> root == <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        RightDepth = self.maxDepth(root.right)</div><div class="line">        LeftDepth = self.maxDepth(root.left)</div><div class="line">        <span class="keyword">if</span> RightDepth &gt; LeftDepth :</div><div class="line">            <span class="keyword">return</span> RightDepth + <span class="number">1</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> LeftDepth + <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>先计算出两个子节点的最大深度，然后通过判断，计算得到父节点的最大深度，递归的使用，让程序结构变得简单。</p>
+<h1 id="Add-Digits"><a href="#Add-Digits" class="headerlink" title="Add Digits"></a>Add Digits</h1><h2 id="题目简述-1"><a href="#题目简述-1" class="headerlink" title="题目简述"></a>题目简述</h2><p>Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.<br><strong>For example:</strong><br>Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.<br><strong>Follow up:</strong> Could you do it without any loop/recursion in O(1) runtime? </p>
+<h2 id="Python-程序-1"><a href="#Python-程序-1" class="headerlink" title="Python 程序"></a>Python 程序</h2><p>给定一个非负整数num，重复地将每一位数字相加，直到结果只有一位数为止。<br><strong>方法一：</strong> 第一个直观的解法就是模拟上述过程，<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addDigits</span><span class="params">(self, num)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type num: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="keyword">while</span> num &gt; <span class="number">9</span>:</div><div class="line">            num = num%<span class="number">10</span> + num/<span class="number">10</span></div><div class="line">        <span class="keyword">return</span> num</div></pre></td></tr></table></figure></p>
+<p><strong>进一步思考：</strong> 能否不用循环，在O(1)运行时间内完成题目？<br>根据提示，由于输出的结果只有一位数，所以其可能的数字为0～9。使用方法一的代码输出与输入的关系为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">in</th>
+<th style="text-align:center">out</th>
+<th style="text-align:center">in</th>
+<th style="text-align:center">out</th>
+<th style="text-align:center">in</th>
+<th style="text-align:center">out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">21</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">22</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">25</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">26</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">27</td>
+<td style="text-align:center">9</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">18</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">28</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">29</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<p>可以发现输入输出之间的关系为<br>当 num &gt;  0 时，out = (in -1 ) % 9 + 1。num = 0时，out = num = 0。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addDigits</span><span class="params">(self, num)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type num: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="keyword">return</span> num <span class="keyword">if</span> num == <span class="number">0</span> <span class="keyword">else</span> ((num<span class="number">-1</span>) % <span class="number">9</span>+<span class="number">1</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>这道题目如果从运算过程的模拟上来说是很容易解决的，通过循环、递归来实现计算，但是考虑到运行时间，如果输入的数值很大，需要经过多次计算才能够得到结果，那么计算时间并不是O(1)的复杂度。通过总结归纳得到输出结果和输入数值之间的规律，可以简化程序结构，同时优化程序的效率。很多时候，不管是编程还是其他的一些事情，我们总是简单粗暴地通过最直观的方法实现，没有去深究背后的规律，看起来是迅速找到了解决问题的方法，但是最终的效率上不高。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+            <a href="/tags/二叉树/" rel="tag">#二叉树</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/13/using-python-to-solve-leetcode-2nd/" rel="next" title="Leetcode刷题笔记(2)">
+                <i class="fa fa-chevron-left"></i> Leetcode刷题笔记(2)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/20/using-python-to-solve-leetcode-3rd/"
+           data-title="using puthon to solve leetcode 3rd" data-url="http://jonzhang.me/2016/11/20/using-python-to-solve-leetcode-3rd/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Jon Zhang" />
+          <p class="site-author-name" itemprop="name">Jon Zhang</p>
+          <p class="site-description motion-element" itemprop="description">反正你也不认识我。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sweeneyzhang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/JiongDouble" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhang-jun-sheng-61s" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/146237641/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Maximum-Depth-of-Binary-Tree"><span class="nav-number">1.</span> <span class="nav-text">Maximum Depth of Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目简述"><span class="nav-number">1.1.</span> <span class="nav-text">题目简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-程序"><span class="nav-number">1.2.</span> <span class="nav-text">Python 程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-Digits"><span class="nav-number">2.</span> <span class="nav-text">Add Digits</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目简述-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-程序-1"><span class="nav-number">2.2.</span> <span class="nav-text">Python 程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-1"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jon Zhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jonzhang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

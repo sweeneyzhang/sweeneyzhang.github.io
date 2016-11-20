@@ -251,6 +251,128 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/20/using-python-to-solve-leetcode-3rd/" itemprop="url">
+                  using puthon to solve leetcode 3rd
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-20T09:50:13+08:00" content="2016-11-20">
+              2016-11-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/20/using-python-to-solve-leetcode-3rd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/20/using-python-to-solve-leetcode-3rd/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Maximum-Depth-of-Binary-Tree"><a href="#Maximum-Depth-of-Binary-Tree" class="headerlink" title="Maximum Depth of Binary Tree"></a>Maximum Depth of Binary Tree</h1><h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><p>Given a binary tree, find its maximum depth.<br>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/20/using-python-to-solve-leetcode-3rd/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/13/using-python-to-solve-leetcode-2nd/" itemprop="url">
                   Leetcode刷题笔记(2)
                 </a>
@@ -320,15 +442,12 @@
 
       
         
-          
-            <h1 id="Single-Number"><a href="#Single-Number" class="headerlink" title="Single Number"></a>Single Number</h1><h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><p>Given an array of integers, every element appears twice except for one. Find that single one.<br><strong>Note:</strong> Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
-<h2 id="Python-程序"><a href="#Python-程序" class="headerlink" title="Python 程序"></a>Python 程序</h2><p>这个题目是要求出所给的一个数列中仅出现一次的数值，难点在于需要设计一个时间复杂度为n的算法，同时不适用额外的内存空间。<br>除了最终返回的数字外，其他数字都出现了两次。根据异或操作的特性，两个相同的数值异或后等于0，一个数与0异或得到其本身。所以可以对数列逐个异或得到最终的Single number。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        ret = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> nums:</div><div class="line">            ret ^= x</div><div class="line">        <span class="keyword">return</span> ret</div></pre></td></tr></table></figure></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于位操作，一向是接触比较少的，在思维中总是会不经意遗忘这一类高效、简单的运算。位操作主要包括以下几种：按位与(&amp;)、按位或(|)、按位取反(~)、按位异或(^)以及移位操作(&lt;&lt;，&gt;&gt;)。本题目中借助了异或的特性：一个数与他本身异或得到0，与0异或得到他本身。数列中，所有出现两次的数字异或之后为0，仅出现一次的数与0异或，得到他本身，所以能够计算得到这个数列中的“单身狗”。执行完这个程序，需要对数列遍历一次，而内存仅需要存储一个整形的变量。</p>
-<h1 id="Sum-of-Two-Integers"><a href="#Sum-of-Two-Integers" class="headerlink" title="Sum of Two Integers"></a>Sum of Two Integers</h1><h2 id="题目简述-1"><a href="#题目简述-1" class="headerlink" title="题目简述"></a>题目简述</h2><p>Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.<br><strong>Example:</strong> Given a = 1 and b = 2, return 3.</p>
-<h2 id="Python-程序-1"><a href="#Python-程序-1" class="headerlink" title="Python 程序"></a>Python 程序</h2><p>题目中要求，不能使用加减法来实现两整型数的相加。如果不能使用加减法，那么只能通过位运算来实现了求两数和了。对于整数而言，两数的按位与左移一位即可得到每一位的进位，按位异或可以得到每一位的和，再将进位与按位和进行下一次计算，重复以上操作，直到进位为0，输出和数即可。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getSum</span><span class="params">(self, a, b)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type a: int</div><div class="line">        :type b: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        MAX_INT = <span class="number">0x7FFFFFFF</span></div><div class="line">        MIN_INT = <span class="number">0x80000000</span></div><div class="line">        MASK = <span class="number">0x100000000</span></div><div class="line">        <span class="keyword">while</span> b != <span class="number">0</span>:</div><div class="line">            carry = (a &amp; b)&lt;&lt;<span class="number">1</span> % MASK</div><div class="line">            sum = (a ^ b) % MASK</div><div class="line">            a = sum </div><div class="line">            b = carry</div><div class="line">        <span class="keyword">return</span> a <span class="keyword">if</span> a &lt; MAX_INT <span class="keyword">else</span> ~((a % MIN_INT)^MAX_INT)</div></pre></td></tr></table></figure></p>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>使用位运算实现加法，需要考虑两个问题，一个是整型数的位宽，一个是负数的运算。所以在实现过程中，需要考虑溢出以及最后取值的符号。</p>
-
-          
+          <h1 id="Single-Number"><a href="#Single-Number" class="headerlink" title="Single Number"></a>Single Number</h1><h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><p>Given an array of integers, every element appears twice except for one. Find that single one.<br><strong>Note:</strong> Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/13/using-python-to-solve-leetcode-2nd/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1255,7 +1374,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1272,7 +1391,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

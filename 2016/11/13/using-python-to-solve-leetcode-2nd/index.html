@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://jonzhang.me/2016/11/13/using-python-to-solve-leetcode-2nd/index.html">
 <meta property="og:site_name" content="JonZhang's blog">
 <meta property="og:description" content="Single Number题目简述Given an array of integers, every element appears twice except for one. Find that single one.Note: Your algorithm should have a linear runtime complexity. Could you implement it witho">
-<meta property="og:updated_time" content="2016-11-15T15:16:33.730Z">
+<meta property="og:updated_time" content="2016-11-20T01:34:48.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode刷题笔记(2)">
 <meta name="twitter:description" content="Single Number题目简述Given an array of integers, every element appears twice except for one. Find that single one.Note: Your algorithm should have a linear runtime complexity. Could you implement it witho">
@@ -315,7 +315,7 @@
       
 
       
-        <h1 id="Single-Number"><a href="#Single-Number" class="headerlink" title="Single Number"></a>Single Number</h1><h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><p>Given an array of integers, every element appears twice except for one. Find that single one.<br><strong>Note:</strong> Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
+        <h1 id="Single-Number"><a href="#Single-Number" class="headerlink" title="Single Number"></a>Single Number</h1><h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><p>Given an array of integers, every element appears twice except for one. Find that single one.<br><strong>Note:</strong> Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?<br><a id="more"></a></p>
 <h2 id="Python-程序"><a href="#Python-程序" class="headerlink" title="Python 程序"></a>Python 程序</h2><p>这个题目是要求出所给的一个数列中仅出现一次的数值，难点在于需要设计一个时间复杂度为n的算法，同时不适用额外的内存空间。<br>除了最终返回的数字外，其他数字都出现了两次。根据异或操作的特性，两个相同的数值异或后等于0，一个数与0异或得到其本身。所以可以对数列逐个异或得到最终的Single number。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        ret = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> nums:</div><div class="line">            ret ^= x</div><div class="line">        <span class="keyword">return</span> ret</div></pre></td></tr></table></figure></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于位操作，一向是接触比较少的，在思维中总是会不经意遗忘这一类高效、简单的运算。位操作主要包括以下几种：按位与(&amp;)、按位或(|)、按位取反(~)、按位异或(^)以及移位操作(&lt;&lt;，&gt;&gt;)。本题目中借助了异或的特性：一个数与他本身异或得到0，与0异或得到他本身。数列中，所有出现两次的数字异或之后为0，仅出现一次的数与0异或，得到他本身，所以能够计算得到这个数列中的“单身狗”。执行完这个程序，需要对数列遍历一次，而内存仅需要存储一个整形的变量。</p>
 <h1 id="Sum-of-Two-Integers"><a href="#Sum-of-Two-Integers" class="headerlink" title="Sum of Two Integers"></a>Sum of Two Integers</h1><h2 id="题目简述-1"><a href="#题目简述-1" class="headerlink" title="题目简述"></a>题目简述</h2><p>Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.<br><strong>Example:</strong> Given a = 1 and b = 2, return 3.</p>
@@ -365,6 +365,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/20/using-python-to-solve-leetcode-3rd/" rel="prev" title="using puthon to solve leetcode 3rd">
+                using puthon to solve leetcode 3rd <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -436,7 +440,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -453,7 +457,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
